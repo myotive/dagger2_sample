@@ -1,0 +1,66 @@
+[
+  {
+    "name": ".gitignore",
+    "path": "common/.gitignore",
+    "sha": "796b96d1c402326528b4ba3c12ee9d92d0e212e9",
+    "size": 7,
+    "url": "https://api.github.com/repos/myotive/blog-fragments-2017/contents/common/.gitignore?ref=master",
+    "html_url": "https://github.com/myotive/blog-fragments-2017/blob/master/common/.gitignore",
+    "git_url": "https://api.github.com/repos/myotive/blog-fragments-2017/git/blobs/796b96d1c402326528b4ba3c12ee9d92d0e212e9",
+    "download_url": "https://raw.githubusercontent.com/myotive/blog-fragments-2017/master/common/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/myotive/blog-fragments-2017/contents/common/.gitignore?ref=master",
+      "git": "https://api.github.com/repos/myotive/blog-fragments-2017/git/blobs/796b96d1c402326528b4ba3c12ee9d92d0e212e9",
+      "html": "https://github.com/myotive/blog-fragments-2017/blob/master/common/.gitignore"
+    }
+  },
+  {
+    "name": "build.gradle",
+    "path": "common/build.gradle",
+    "sha": "cc7f623463a36bfc4e301333e5e5f3ef5901a963",
+    "size": 1843,
+    "url": "https://api.github.com/repos/myotive/blog-fragments-2017/contents/common/build.gradle?ref=master",
+    "html_url": "https://github.com/myotive/blog-fragments-2017/blob/master/common/build.gradle",
+    "git_url": "https://api.github.com/repos/myotive/blog-fragments-2017/git/blobs/cc7f623463a36bfc4e301333e5e5f3ef5901a963",
+    "download_url": "https://raw.githubusercontent.com/myotive/blog-fragments-2017/master/common/build.gradle",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/myotive/blog-fragments-2017/contents/common/build.gradle?ref=master",
+      "git": "https://api.github.com/repos/myotive/blog-fragments-2017/git/blobs/cc7f623463a36bfc4e301333e5e5f3ef5901a963",
+      "html": "https://github.com/myotive/blog-fragments-2017/blob/master/common/build.gradle"
+    }
+  },
+  {
+    "name": "proguard-rules.pro",
+    "path": "common/proguard-rules.pro",
+    "sha": "8e0a7dd7e29521547dd39a5a1f338fa17c7fdce9",
+    "size": 673,
+    "url": "https://api.github.com/repos/myotive/blog-fragments-2017/contents/common/proguard-rules.pro?ref=master",
+    "html_url": "https://github.com/myotive/blog-fragments-2017/blob/master/common/proguard-rules.pro",
+    "git_url": "https://api.github.com/repos/myotive/blog-fragments-2017/git/blobs/8e0a7dd7e29521547dd39a5a1f338fa17c7fdce9",
+    "download_url": "https://raw.githubusercontent.com/myotive/blog-fragments-2017/master/common/proguard-rules.pro",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/myotive/blog-fragments-2017/contents/common/proguard-rules.pro?ref=master",
+      "git": "https://api.github.com/repos/myotive/blog-fragments-2017/git/blobs/8e0a7dd7e29521547dd39a5a1f338fa17c7fdce9",
+      "html": "https://github.com/myotive/blog-fragments-2017/blob/master/common/proguard-rules.pro"
+    }
+  },
+  {
+    "name": "src",
+    "path": "common/src",
+    "sha": "7d72e0b7446646a16b4736c744bd6f2361a9aff0",
+    "size": 0,
+    "url": "https://api.github.com/repos/myotive/blog-fragments-2017/contents/common/src?ref=master",
+    "html_url": "https://github.com/myotive/blog-fragments-2017/tree/master/common/src",
+    "git_url": "https://api.github.com/repos/myotive/blog-fragments-2017/git/trees/7d72e0b7446646a16b4736c744bd6f2361a9aff0",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/myotive/blog-fragments-2017/contents/common/src?ref=master",
+      "git": "https://api.github.com/repos/myotive/blog-fragments-2017/git/trees/7d72e0b7446646a16b4736c744bd6f2361a9aff0",
+      "html": "https://github.com/myotive/blog-fragments-2017/tree/master/common/src"
+    }
+  }
+]
