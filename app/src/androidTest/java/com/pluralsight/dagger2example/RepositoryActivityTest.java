@@ -23,6 +23,7 @@ import static android.support.test.espresso.intent.Intents.intended;
 import static android.support.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static android.support.test.espresso.matcher.ViewMatchers.assertThat;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static org.mockito.internal.verification.VerificationModeFactory.atLeast;
 
 @RunWith(AndroidJUnit4.class)
 public class RepositoryActivityTest extends BaseTest {
@@ -36,6 +37,8 @@ public class RepositoryActivityTest extends BaseTest {
     @Before
     public void beforeTest(){
         presenter = BaseTest.application.getApplicationComponent().repositoryPresenter();
+
+        setupResponses();
     }
 
 
@@ -56,7 +59,6 @@ public class RepositoryActivityTest extends BaseTest {
     public void testRepositoryLoaded(){
         // arrange
         final Integer expectedCount = 12;
-        setupResponses();
 
         // act
         startActivity();
@@ -81,15 +83,14 @@ public class RepositoryActivityTest extends BaseTest {
         // If this presenter wasn't scoped, we would need to some how make it a singleton so we can
         // mock/spy the same object that is injected and the object we obtained from the
         // component.
-        Mockito.verify(presenter).start();
-        Mockito.verify(presenter).takeView(Mockito.any(RepositoryContract.RepositoryView.class));
-        Mockito.verify(presenter).getRepositories(Mockito.anyString());
+        Mockito.verify(presenter, atLeast(1)).start();
+        Mockito.verify(presenter, atLeast(1)).takeView(Mockito.any(RepositoryContract.RepositoryView.class));
+        Mockito.verify(presenter, atLeast(1)).getRepositories(Mockito.anyString());
     }
 
     @Test
     public void testRepositoryItemClick(){
-        // arrange
-        setupResponses();
+        // arrange test
 
         // act
         startActivity();
