@@ -44,6 +44,8 @@ public class MockSampleApplication extends SampleApplication {
 
     @Override
     public RepositoryDetailComponent getRepositoryDetailComponent(String owner, String repo) {
+        if(repositoryDetailComponent == null)
+            generateRepositoryDetailComponent(owner, repo);
 
         return repositoryDetailComponent;
     }

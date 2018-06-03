@@ -2,6 +2,7 @@ package com.pluralsight.dagger2example;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.test.espresso.Espresso;
 import android.support.test.espresso.NoMatchingViewException;
 import android.support.test.espresso.ViewAssertion;
 import android.support.test.espresso.assertion.ViewAssertions;
@@ -31,6 +32,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.assertThat;
 import static android.support.test.espresso.matcher.ViewMatchers.hasDescendant;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static junit.framework.Assert.assertTrue;
 
 @RunWith(AndroidJUnit4.class)
 public class RepositoryDetailActivityTest extends BaseTest {
@@ -47,6 +49,8 @@ public class RepositoryDetailActivityTest extends BaseTest {
     public void beforeTest(){
         RepositoryDetailComponent component = application.generateRepositoryDetailComponent(owner, repository);
         presenter = component.repositoryContentPresenter();
+
+        setupResponses();
     }
 
     private RepositoryDetailActivity startActivity() {
@@ -78,7 +82,6 @@ public class RepositoryDetailActivityTest extends BaseTest {
     public void testContentsLoaded(){
         // arrange
         final Integer expectedCount = 16;
-        setupResponses();
 
         // act
         startActivity();
@@ -92,7 +95,6 @@ public class RepositoryDetailActivityTest extends BaseTest {
         // arrange
         final Integer initialCount = 16;
         final Integer finalCount =  4;
-        setupResponses();
 
         // act
         startActivity();
@@ -109,6 +111,29 @@ public class RepositoryDetailActivityTest extends BaseTest {
                 .check(ViewAssertions.matches(hasDescendant(withText("src"))));
 
         Mockito.verify(presenter).getRepositorySubDirectory(Mockito.anyString());
+    }
+
+    @Test
+    public void testSubDirectoryBackButton(){
+        // arrange
+        final Integer initialCount = 16;
+        final Integer subDirectoryCount =  4;
+
+        // act
+        startActivity();
+
+        // assert
+        verifyRecyclerViewCount(initialCount);
+        Mockito.verify(presenter).getRepositoryContent();
+
+        onView(withId(R.id.rv_contents))
+                .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
+
+        verifyRecyclerViewCount(subDirectoryCount);
+
+        Espresso.pressBack();
+
+        verifyRecyclerViewCount(initialCount);
     }
 
     /**
