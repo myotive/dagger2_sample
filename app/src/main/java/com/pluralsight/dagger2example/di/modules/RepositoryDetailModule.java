@@ -1,5 +1,7 @@
 package com.pluralsight.dagger2example.di.modules;
 
+import com.pluralsight.dagger2example.di.qualifiers.Owner;
+import com.pluralsight.dagger2example.di.qualifiers.Repository;
 import com.pluralsight.dagger2example.di.scopes.RepositoryDetailScope;
 import com.pluralsight.dagger2example.mvp.repositoryContent.RepositoryContentContract;
 import com.pluralsight.dagger2example.mvp.repositoryContent.RepositoryContentPresenter;
@@ -19,9 +21,22 @@ public class RepositoryDetailModule {
         this.repo = repo;
     }
 
+    @Provides
+    @Repository
+    String providesRepository(){
+        return repo;
+    }
+
+    @Provides
+    @Owner
+    String providesOwner(){
+        return owner;
+    }
+
     @RepositoryDetailScope
     @Provides
-    public RepositoryContentContract.RepositoryContentPresenter provideRepositoryContentPresenter(GitHubAPI gitHubAPI){
-        return new RepositoryContentPresenter(gitHubAPI, repo, owner);
+    public RepositoryContentContract.RepositoryContentPresenter
+    provideRepositoryContentPresenter(RepositoryContentPresenter repositoryContentPresenter){
+        return repositoryContentPresenter;
     }
 }

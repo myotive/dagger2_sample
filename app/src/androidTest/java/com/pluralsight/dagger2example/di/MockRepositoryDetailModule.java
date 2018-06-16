@@ -16,7 +16,7 @@ public class MockRepositoryDetailModule extends RepositoryDetailModule {
     }
 
    @Override
-    public RepositoryContentContract.RepositoryContentPresenter provideRepositoryContentPresenter(GitHubAPI gitHubAPI) {
-        return Mockito.spy(new RepositoryContentPresenter(gitHubAPI, repo, owner));
+    public RepositoryContentContract.RepositoryContentPresenter provideRepositoryContentPresenter(RepositoryContentPresenter presenter) {
+        return Mockito.spy(presenter);
     }
 }

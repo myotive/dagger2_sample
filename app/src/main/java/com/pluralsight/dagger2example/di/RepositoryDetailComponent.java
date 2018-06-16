@@ -5,6 +5,7 @@ import com.pluralsight.dagger2example.di.modules.RepositoryDetailModule;
 import com.pluralsight.dagger2example.di.scopes.RepositoryDetailScope;
 import com.pluralsight.dagger2example.mvp.repositoryContent.RepositoryContentContract;
 
+import dagger.Component;
 import dagger.Subcomponent;
 
 @RepositoryDetailScope

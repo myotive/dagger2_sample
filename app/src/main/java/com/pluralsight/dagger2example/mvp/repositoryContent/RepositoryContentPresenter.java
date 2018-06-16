@@ -2,12 +2,15 @@ package com.pluralsight.dagger2example.mvp.repositoryContent;
 
 import android.util.Log;
 
+import com.pluralsight.dagger2example.di.qualifiers.Owner;
+import com.pluralsight.dagger2example.di.qualifiers.Repository;
 import com.pluralsight.dagger2example.network.GitHubAPI;
 import com.pluralsight.dagger2example.network.models.Content;
 
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -22,7 +25,7 @@ public class RepositoryContentPresenter implements RepositoryContentContract.Rep
     private RepositoryContentContract.RepositoryContentView view;
 
     @Inject
-    public RepositoryContentPresenter(GitHubAPI gitHubAPI, String repo, String owner)
+    public RepositoryContentPresenter(GitHubAPI gitHubAPI, @Repository String repo, @Owner String owner)
     {
         this.gitHubAPI = gitHubAPI;
         this.repo= repo;
